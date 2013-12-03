@@ -11,8 +11,6 @@
   "license": "MIT",
   "src": [
     "src/path-normalize.c",
-    "src/path-normalize.h",
-    "src/str-copy.h",
-    "src/str-copy.c"
+    "src/path-normalize.h"
   ]
 }
