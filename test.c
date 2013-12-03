@@ -3,7 +3,7 @@
 
 #include <string.h>
 #include <assert.h>
-#include "src/path-normalize.h"
+#include "path-normalize.h"
 
 int main(int argc, char **argv) {
 

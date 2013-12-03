@@ -1,6 +1,6 @@
 
-test: test.c src/path-normalize.c src/str-copy.c
-	$(CC) -std=c99 $^ -o $@
+test: test.c src/*.c
+	$(CC) -std=c99 $^ -o $@ -Isrc
 	./test
 
 .PHONY: test
