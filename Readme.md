@@ -11,7 +11,7 @@
 
 ## API
 
-### `char *path_normalize(char *path)`
+### `char *path_normalize(const char *path)`
 
   Normalize the given `path` by removing duplicate/unnecessary slashes.
 
