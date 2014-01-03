@@ -7,7 +7,7 @@
 //
 
 #include <string.h>
-#include "str-copy.h"
+#include "str-copy/str-copy.h"
 #include "path-normalize.h"
 
 /*
