@@ -1,23 +1,18 @@
 
-CC     ?= cc
 SRC     = $(wildcard src/*.c)
 SRC    += $(wildcard deps/*/*.c)
+OBJS    = $(SRC:.c=.o)
 CFLAGS  = -std=c99 -Ideps -Isrc
 CFLAGS += -Wall -Wextra
 
-test: deps
-	$(CC) $(CFLAGS) -o $@ test.c $(SRC)
-	./test
+test: test.c $(OBJS)
+	$(CC) $(CFLAGS) $^ -o $@
+	./$@
 
-deps: package.json
-	@clib install
-
-travis:
-	git clone https://github.com/clibs/clib.git
-	$(MAKE) install -C clib
-	$(MAKE) deps test
+%.o: %.c
+	$(CC) $< -c -o $@ $(CFLAGS)
 
 clean:
-	rm -rf test deps clib
+	rm -f $(OBJS) test
 
-.PHONY: test
+.PHONY: test clean
